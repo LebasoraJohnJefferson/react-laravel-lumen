@@ -1,5 +1,7 @@
 <?php
-
+header('Access-Control-Allow-Origin:https://lumen-react-fron-end.vercel.app/');
+header('Access-Control-Allow-Methods: *');
+header('Access-Control-Allow-Headers: *');
 /*
 |--------------------------------------------------------------------------
 | Create The Application
