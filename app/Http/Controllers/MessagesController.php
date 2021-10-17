@@ -13,7 +13,7 @@ class MessagesController extends Controller
         $messages = DB::table('messages')
         ->select('messages.user_id','name','message_id','messages')
         ->join('users','users.user_id','messages.user_id')
-        ->orderBy('message_id')
+        ->orderBy('message_id','DESC')
         ->get();
         return response()->json($messages);
     }
