@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Messages;
 
 class MessagesController extends Controller
 {
@@ -11,7 +13,7 @@ class MessagesController extends Controller
         $messages = DB::table('messages')
         ->select('messages.user_id','name','message_id','messages')
         ->join('users','users.user_id','messages.user_id')
-        ->orderBy('message_id','desc')
+        ->orderBy('message_id')
         ->get();
         return response()->json($messages);
     }
